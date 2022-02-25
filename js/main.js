@@ -4,10 +4,10 @@ function updateTheText(index) {
     // console.log(animationValue);
     let taskCheckBox = document.getElementById('task' + index);
     if (taskCheckBox.checked) {
-        document.styleSheets[2].addRule('.task'+ index +':after','animation: '+'.5s linear 0s 1 normal forwards running strike');
+        document.styleSheets[1].addRule('.task'+ index +':after','animation: '+'.5s linear 0s 1 normal forwards running strike');
         // document.documentElement.style.setProperty("--animation-things", ".5s linear 0s 1 normal forwards running strike");
     } else {
-        document.styleSheets[2].addRule('.task'+ index +':after','animation: '+'.3s linear 0s 1 normal forwards running backwards-strike');
+        document.styleSheets[1].addRule('.task'+ index +':after','animation: '+'.3s linear 0s 1 normal forwards running backwards-strike');
         // document.documentElement.style.setProperty("--animation-things", "none");
     }
 }
