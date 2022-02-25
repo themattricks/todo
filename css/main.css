@@ -1,1 +1,88 @@
 
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+.modal-container {
+    background-color: #607d8b;
+    color: white;
+    padding: 15px;
+    height: auto;
+    width: 500px;
+}
+.greeting-user {
+    display: inline-block;
+    font-weight: bold;
+}
+.modal-container i {
+    font-size: 1.3rem;
+    position: relative;
+    right: -77%;
+    transition: transform .5s;
+}
+.modal-container i:hover {
+    cursor: pointer;
+}
+.task {
+    margin-top: 5%;
+}
+/* input[type=checkbox]::before {
+    content: '';
+    position: absolute;
+    left: 10%;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+} */
+input[type=checkbox]:checked ~ label {
+    opacity: 0.5;
+    /* text-decoration: line-through; */
+}
+@keyframes strike {
+    0% { width: 0; }
+    50% { width: 50%; }
+    100% { width: 100%; }
+}
+@keyframes backwards-strike {
+    0% { width: 100%; }
+    50% { width: 50%; }
+    100% { width: 0%; }
+}
+@keyframes getIn {
+    0% { left: 44%; }
+    50% { left: 40%; }
+    100% { left: 38%; }
+}
+@keyframes backwards-getIn {
+    0% { left: 38%; }
+    50% { left: 40%; }
+    100% { left: 44%; }
+}
+label {
+    position: relative;
+}
+.tasks .task label:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    background: white;
+    /* animation: var(--animation-things); */
+    /* animation: .5s linear 0s 1 normal forwards running strike; */
+}
+.modal-container .new-task {
+    display: none;
+    position: relative;
+    left: 35%;
+    caret-color: #347b9d;
+    background-color: #25556b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: 'Quicksand', sans-serif;
+}
+:focus-visible {
+    outline: none;
+    border: none;
+}
