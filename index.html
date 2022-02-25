@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <title>To-Do App | Personal Project</title>
+    </head>
+    <body>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .modal-container {
+            background-color: #607d8b;
+            color: white;
+            padding: 15px;
+            height: auto;
+            width: 500px;
+        }
+        .greeting-user {
+            display: inline-block;
+            font-weight: bold;
+        }
+        .modal-container i {
+            font-size: 1.3rem;
+            position: relative;
+            right: -77%;
+            transition: transform .5s;
+        }
+        .modal-container i:hover {
+            cursor: pointer;
+        }
+        .task {
+            margin-top: 5%;
+        }
+        /* input[type=checkbox]::before {
+            content: '';
+            position: absolute;
+            left: 10%;
+            width: 30px;
+            height: 2px;
+            background-color: white;
+        } */
+        input[type=checkbox]:checked ~ label {
+            opacity: 0.5;
+            /* text-decoration: line-through; */
+        }
+        @keyframes strike {
+            0% { width: 0; }
+            50% { width: 50%; }
+            100% { width: 100%; }
+        }
+        @keyframes backwards-strike {
+            0% { width: 100%; }
+            50% { width: 50%; }
+            100% { width: 0%; }
+        }
+        @keyframes getIn {
+            0% { left: 44%; }
+            50% { left: 40%; }
+            100% { left: 38%; }
+        }
+        @keyframes backwards-getIn {
+            0% { left: 38%; }
+            50% { left: 40%; }
+            100% { left: 44%; }
+        }
+        label {
+            position: relative;
+        }
+        .tasks .task label:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 2px;
+            background: white;
+            /* animation: var(--animation-things); */
+            /* animation: .5s linear 0s 1 normal forwards running strike; */
+        }
+        .modal-container .new-task {
+            display: none;
+            position: relative;
+            left: 35%;
+            caret-color: #347b9d;
+            background-color: #25556b;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 5px;
+            font-family: 'Quicksand', sans-serif;
+        }
+        :focus-visible {
+            outline: none;
+            border: none;
+        }
+    </style>
+    <div class="modal-container">
+        <p class="greeting-user">Hello, Omar</p>
+        <i class="fa fa-plus-square" aria-hidden="true"></i>
+        <input type="text" class="new-task" onkeypress="keyPressed()">
+        <hr>
+        <!-- <p style="font-weight: bolder;">Current List:</p> -->
+        <div class="tasks">
+            <!-- <div class="task">
+                <input id="task1" type="checkbox" onclick="updateTheText(1);">
+                <label class="task1" for="task1">Buy Bread</label>
+            </div> -->
+            <!-- Here I've Imported Tasks From Js -->
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://use.fontawesome.com/79121f18c2.js"></script>
+    </body>
+</html>
