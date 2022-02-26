@@ -43,7 +43,7 @@ theAddButton.onclick = function() {
 document.querySelector('.new-task').onkeypress = function(e) {
     if (!e) e = window.event;
     if (e.keyCode == '13') {
-        tasksArray.push(this.value);
+        globalThis.tasksArray.push(this.value);
         localStorage.setItem("tasks", tasksArray);
         document.querySelector('.tasks').innerHTML = "";
         refreshTasks();
